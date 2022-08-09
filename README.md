@@ -1,5 +1,5 @@
 # Oura-gas
-Google App Script for [Oura API](https://cloud.ouraring.com/docs/)
+Google Apps Script for [Oura API](https://cloud.ouraring.com/docs/)
 
 ## Preparation
 
