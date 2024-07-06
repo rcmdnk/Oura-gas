@@ -1,26 +1,3 @@
-function test(){
-  let token = undefined;
-  // let token = TOKEN;
-  if(token == undefined){
-    const service = getService();
-    if (!service.hasAccess()) {
-      throw new Error('Open the following URL and re-run the script: '
-                      + service.getAuthorizationUrl());
-    }
-    token = service.getAccessToken();
-  }
-  var result = undefined;
-  let url = 'https://api.ouraring.com/v1/userinfo'
-  const response = UrlFetchApp.fetch(url, {
-    headers: {
-      Authorization: 'Bearer ' + token
-    }
-  });
-  result = JSON.parse(response.getContentText());
-  Logger.log(result);
-}
-
-
 /**
  * Oura API Ref: https://cloud.ouraring.com/docs/
  */
