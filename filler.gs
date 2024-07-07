@@ -63,3 +63,11 @@ function fillSleep(){
   });
   fillValues(sheet_name, columns, data_array, 'yyyy-MM-dd HH:mm:ss');
 }
+
+function fillAll(){
+  fillPersonalInfo();
+  fillDailyReadiness();
+  fillDailySleep();
+  fillDailyStress();
+  fillSleep();
+}
