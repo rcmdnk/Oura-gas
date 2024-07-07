@@ -20,3 +20,32 @@ Google Apps Script for [Oura API](https://cloud.ouraring.com/docs/)
             * `SCRIPT_ID` is found in the menu of Apps Script: File -> Project properties -> Script Id
     * Get client id and client secret.
     * EMAIL will be used to notify when authorization is needed.
+
+## Parameters
+
+Edit params.gs if you want to change the parameters.
+
+
+## Fill data in the spreadsheet
+
+Run following functions:
+
+* `fillPersonalInfo`: Personal information.
+* `fillDailySleep`: Daily sleep data (scores).
+* `fillSleep`: Sleep data (details).
+
+## Schedule job
+
+It is good to schedule the job to retrieve messages every day.
+
+* Go `Trigger` (Clock icon) in the Apps Script project.
+* `Add Trigger`
+    * Choose which function to run: `fillSleep`
+    * Which runs at deployment: `Head`
+    * Select event source: `Time-driven`
+    * Select type of time based trigger: `Day timer`
+    * Select time of day: `0 am to 1 am`
+
+This trigger fill sleep data between 0 am to 1 am every day.
+
+Set triggers for `fillDailySleep` and `fillPersonalInfo` as well.
