@@ -1,6 +1,29 @@
 const START_DATE = '2000-01-01';
 const TIME_ZONE = 'Asia/Tokyo'; // replace with your desired timezone string. see: https://402.ecma-international.org/8.0/#sec-time-zone-names
-const SCOPE = 'email personal dailemail personal daily heartrate workout tag session spo2y'; // Space separated array. choices: email personal daily heartrate workout tag session spo2   
+const SCOPE = 'email personal daily heartrate workout tag session spo2'; // Space separated array. choices: email personal daily heartrate workout tag session spo2
+
+const DAILY_READINESS_DATA = [
+  'day',  // 'day' must be first
+  'score',
+  'temperature_deviation',
+  'temperature_trend_deviation',
+];
+
+const DAILY_READINESS_CONTRIBUTORS = [
+'resting_heart_rate',
+'hrv_balance',
+'body_temperature',
+'recovery_index',
+'previous_night',
+'sleep_balance',
+'previous_day_activity',
+'activity_balance',
+];
+
+const DAILY_SLEEP_DATA = [
+  'day',
+  'score',
+];
 
 const DAILY_SLEEP_CONTRIBUTORS = [
   'total_sleep',
@@ -10,6 +33,16 @@ const DAILY_SLEEP_CONTRIBUTORS = [
   'deep_sleep',
   'latency',
   'timing'
+];
+
+const DAILY_STRESS_DATA = [
+  'day',
+  'stress_high',
+  'recovery_high',
+  'day_summary',
+];
+
+const DAILY_STRESS_CONTRIBUTORS = [
 ];
 
 const SLEEP_DATA_INDEX = 'bedtime_start';

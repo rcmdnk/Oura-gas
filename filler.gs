@@ -1,3 +1,8 @@
+function test(){
+const data = requestData('daily_sleep', '2024-07-01', '2024-07-05');
+Logger.log(data);
+}
+
 function fillPersonalInfo(){
   const info = request('personal_info')
   const columns = Object.keys(info);
@@ -5,20 +10,35 @@ function fillPersonalInfo(){
   fillRenew('Personal Info', columns, data);
 }
 
-function fillDailySleep(){
-  const sheet_name = 'Daily Sleep';
-  const start_date = getLatestTime(sheet_name);
-  const data = requestData('daily_sleep', start_date);
-  const columns = ['day', 'score'].concat(DAILY_SLEEP_CONTRIBUTORS);
+function fillDailyScore(sheetName, collection, dataNames, contributors){
+  const start_date = getLatestTime(sheetName);
+  const data = requestData(collection, start_date);
+  const columns = dataNames.concat(contributors);
   const data_array = [];
-  data.forEach(function(d) {
-    const each_data = [d['day'], d['score']];
-    DAILY_SLEEP_CONTRIBUTORS.forEach(function(c){
+  data.forEach(function(d){
+    const each_data = [];
+    dataNames.forEach(function(c){
+      each_data.push(d[c])
+    });    
+    contributors.forEach(function(c){
       each_data.push(d['contributors'][c])
     });
     data_array.push(each_data);
   });
-  fillValues(sheet_name, columns, data_array, 'yyyy-MM-dd');
+  fillValues(sheetName, columns, data_array, 'yyyy-MM-dd');
+}
+
+
+function fillDailyReadiness(){
+  fillDailyScore('Daily Readiness', 'daily_readiness', DAILY_READINESS_DATA, DAILY_READINESS_CONTRIBUTORS);
+}
+
+function fillDailySleep(){
+  fillDailyScore('Daily Sleep', 'daily_sleep', DAILY_SLEEP_DATA, DAILY_SLEEP_CONTRIBUTORS);
+}
+
+function fillDailyStress(){
+  fillDailyScore('Daily Stress', 'daily_stress', DAILY_STRESS_DATA, DAILY_STRESS_CONTRIBUTORS);
 }
 
 function fillSleep(){
