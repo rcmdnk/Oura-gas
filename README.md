@@ -31,7 +31,9 @@ Edit params.gs if you want to change the parameters.
 Run following functions:
 
 * `fillPersonalInfo`: Personal information.
+* `fillDailyReadiness`: Daily readiness data (scores).
 * `fillDailySleep`: Daily sleep data (scores).
+* `fillDailyStress`: Daily stress data.
 * `fillSleep`: Sleep data (details).
 
 ## Schedule job
@@ -48,4 +50,4 @@ It is good to schedule the job to retrieve messages every day.
 
 This trigger fill sleep data between 0 am to 1 am every day.
 
-Set triggers for `fillDailySleep` and `fillPersonalInfo` as well.
+Set triggers for other fillers as well.
