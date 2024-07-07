@@ -42,12 +42,10 @@ It is good to schedule the job to retrieve messages every day.
 
 * Go `Trigger` (Clock icon) in the Apps Script project.
 * `Add Trigger`
-    * Choose which function to run: `fillSleep`
+    * Choose which function to run: `fillAll`
     * Which runs at deployment: `Head`
     * Select event source: `Time-driven`
     * Select type of time based trigger: `Day timer`
     * Select time of day: `0 am to 1 am`
 
-This trigger fill sleep data between 0 am to 1 am every day.
-
-Set triggers for other fillers as well.
+This trigger fill all data (managed by above functions) between 0 am to 1 am every day.
