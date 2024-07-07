@@ -1,2 +1,2 @@
 var TIME_ZONE = 'Asia/Tokyo'; // replace with your desired timezone string. see: https://402.ecma-international.org/8.0/#sec-time-zone-names
-var SCOPE = 'personal daily'; // Space separated array. choices: heartrate workout tag session daily email personal
+var SCOPE = 'email personal dailemail personal daily heartrate workout tag session spo2y'; // Space separated array. choices: email personal daily heartrate workout tag session spo2   

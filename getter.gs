@@ -10,7 +10,7 @@ function test(){
     token = service.getAccessToken();
   }
   let result = undefined;
-  let url = 'https://api.ouraring.com/v1/userinfo';
+  let url = 'https://api.ouraring.com/v2/usercollection/personal_info';
   const response = UrlFetchApp.fetch(url, {
     headers: {
       Authorization: 'Bearer ' + token
@@ -21,7 +21,7 @@ function test(){
 }
 
 function testUserinfo(){
-  let url = 'https://api.ouraring.com/v1/userinfo';
+  let url = 'https://api.ouraring.com/v2/usercollection/personal_info';
   let payload = {};
   let result = request(url, payload, '')
   Logger.log(result);
