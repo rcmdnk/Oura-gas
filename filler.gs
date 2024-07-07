@@ -1,14 +1,5 @@
-function getPersonalInfo(){
-  const result = request('personal_info')
-  return result;
-}
-
-function testPersonalInfo(){
-  Logger.log(getPersonalInfo());
-}
-
 function fillPersonalInfo(){
-  const info = getPersonalInfo();
+  const info = request('personal_info')
   const columns = Object.keys(info);
   const data = Object.values(info);
   fillRenew('Personal Info', columns, data);
